@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divyanshi Pati | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .floating-squares {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .floating-squares li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+        }
+        
+        .floating-squares li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+            background: rgba(255, 87, 34, 0.1);
+        }
+        
+        .floating-squares li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+            background: rgba(76, 175, 80, 0.1);
+        }
+        
+        .floating-squares li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+            background: rgba(33, 150, 243, 0.1);
+        }
+        
+        .floating-squares li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+            background: rgba(156, 39, 176, 0.1);
+        }
+        
+        .floating-squares li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+            background: rgba(255, 235, 59, 0.1);
+        }
+        
+        .floating-squares li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+            background: rgba(244, 67, 54, 0.1);
+        }
+        
+        .floating-squares li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+            background: rgba(0, 150, 136, 0.1);
+        }
+        
+        .floating-squares li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+            background: rgba(103, 58, 183, 0.1);
+        }
+        
+        .floating-squares li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+            background: rgba(255, 152, 0, 0.1);
+        }
+        
+        .floating-squares li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+            background: rgba(233, 30, 99, 0.1);
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+        
+        .skill-box {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: #4a5568;
+            top: 0;
+            bottom: 0;
+            left: 7px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #4299e1;
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .contact-input {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-input:focus {
+            outline: none;
+            border-color: #4299e1;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #f72585, #7209b7, #3a0ca3, #4361ee, #4cc9f0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 8s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating squares background -->
+    <ul class="floating-squares">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-gradient">Divyanshi Pati</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-pink-400 transition duration-300">Home</a>
+                    <a href="#about" class="text-white hover:text-pink-400 transition duration-300">About</a>
+                    <a href="#education" class="text-white hover:text-pink-400 transition duration-300">Education</a>
+                    <a href="#projects" class="text-white hover:text-pink-400 transition duration-300">Projects</a>
+                    <a href="#certifications" class="text-white hover:text-pink-400 transition duration-300">Certifications</a>
+                    <a href="#experience" class="text-white hover:text-pink-400 transition duration-300">Experience</a>
+                    <a href="#skills" class="text-white hover:text-pink-400 transition duration-300">Skills</a>
+                    <a href="#contact" class="text-white hover:text-pink-400 transition duration-300">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">About</a>
+                <a href="#education" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Education</a>
+                <a href="#projects" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Projects</a>
+                <a href="#certifications" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Certifications</a>
+                <a href="#experience" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Experience</a>
+                <a href="#skills" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Skills</a>
+                <a href="#contact" class="block px-3 py-2 text-white hover:bg-pink-900 rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">Hi, I'm <span class="text-gradient">Divyanshi Pati</span></h1>
+                    <p class="text-xl md:text-2xl mb-6 text-blue-300">Data Analytics | Machine Learning | Web Development</p>
+                    <p class="text-lg mb-8 text-gray-300">Passionate undergraduate student eager to contribute to innovative projects and grow in dynamic, tech-driven environments.</p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full text-white font-medium hover:from-blue-600 hover:to-purple-700 transition duration-300">Get In Touch</a>
+                        <a href="#projects" class="px-6 py-3 border border-blue-400 rounded-full text-blue-400 font-medium hover:bg-blue-400 hover:text-white transition duration-300">View Projects</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80 animate-float">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 blur-xl opacity-30"></div>
+                        <div class="relative w-full h-full rounded-full overflow-hidden border-4 border-blue-400">
+                            <!-- Placeholder for profile photo -->
+                            <div class="w-full h-full bg-gray-700 flex items-center justify-center">
+                                <span class="text-6xl text-white">DP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-full">
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        I'm a passionate and driven undergraduate student with a strong interest in data analytics, Machine Learning, and Web development. Currently pursuing my BTech in Computer Science with specialization in AI and Data Science at Sastra University, Tamil Nadu.
+                    </p>
+                    <p class="text-lg mb-6 text-gray-300 leading-relaxed">
+                        My journey in technology began with a curiosity about how things work, which evolved into a passion for creating solutions through code. I enjoy working on projects that challenge me to learn new technologies and push my boundaries.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Email</p>
+                                <p class="text-white">divyanshipati008@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">Phone</p>
+                                <p class="text-white">+91-9724818325</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fab fa-github text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">GitHub</p>
+                                <p class="text-white">github.com/divyanshi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="mr-4 text-blue-400">
+                                <i class="fab fa-linkedin text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400">LinkedIn</p>
+                                <p class="text-white">linkedin.com/in/divyanshi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Interests & Goals Section -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Interests & Goals</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-400 mb-4">My Interests</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-pink-400 mr-2">•</span>
+                            Exploring new Machine Learning algorithms and their real-world applications
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-pink-400 mr-2">•</span>
+                            Data visualization and storytelling with data
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-pink-400 mr-2">•</span>
+                            Building responsive and accessible web applications
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-pink-400 mr-2">•</span>
+                            Participating in hackathons and coding competitions
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-400 mb-4">My Goals</h3>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            To become a full-stack data scientist with expertise in both analytics and deployment
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            Contribute to open-source projects in AI/ML domain
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            Develop impactful solutions for healthcare and education sectors
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-2">•</span>
+                            Mentor aspiring developers and data scientists
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Education</h2>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Education Item 1 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
+                            <div class="flex flex-col md:flex-row justify-between">
+                                <h3 class="text-xl font-bold text-blue-400">BTech in CSE (Specialization in AI and DS)</h3>
+                                <span class="text-yellow-400">CGPA: 7.24</span>
+                            </div>
+                            <p class="text-lg text-white">Sastra University, Tamil Nadu</p>
+                            <div class="flex flex-col md:flex-row md:justify-between mt-2">
+                                <p class="text-gray-400">2022-2026</p>
+                                <p class="text-gray-400">Thanjavur, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 2 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
+                            <div class="flex flex-col md:flex-row justify-between">
+                                <h3 class="text-xl font-bold text-blue-400">Senior Secondary</h3>
+                                <span class="text-yellow-400">Percentage: 86%</span>
+                            </div>
+                            <p class="text-lg text-white">Atmiya Vidyapeeth</p>
+                            <div class="flex flex-col md:flex-row md:justify-between mt-2">
+                                <p class="text-gray-400">2021</p>
+                                <p class="text-gray-400">Gandhidham, Kutch, Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Item 3 -->
+                    <div class="timeline-item pl-8 relative">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
+                            <div class="flex flex-col md:flex-row justify-between">
+                                <h3 class="text-xl font-bold text-blue-400">Secondary</h3>
+                                <span class="text-yellow-400">Percentage: 92%</span>
+                            </div>
+                            <p class="text-lg text-white">Atmiya Vidyapeeth</p>
+                            <div class="flex flex-col md:flex-row md:justify-between mt-2">
+                                <p class="text-gray-400">2019</p>
+                                <p class="text-gray-400">Gandhidham, Kutch, Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">My Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6 transform transition-all hover:scale-105 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-pink-500 to-purple-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-laptop-medical text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-400">PCOS Prediction Website</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Developed a website that predicts whether a person has PCOS or not and suggests lifestyle changes.
+                        Trained by Dataset that uses Random Forest Regressor model.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fab fa-github mr-2"></i>
+                        <a href="#" class="hover:text-pink-400 transition duration-300">GitHub Link</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6 transform transition-all hover:scale-105 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-blue-500 to-teal-400 p-3 rounded-full mr-4">
+                            <i class="fas fa-robot text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-400">Chatbot</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Front-end of all items listing in an order and easy to order by chatbot feature.
+                        Created by Dialog Flow and training prompts for easy understanding. UI/UX Design by HTML and CSS.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fab fa-github mr-2"></i>
+                        <a href="#" class="hover:text-blue-400 transition duration-300">GitHub Link</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card rounded-lg overflow-hidden shadow-lg p-6 transform transition-all hover:scale-105 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-green-400 to-emerald-500 p-3 rounded-full mr-4">
+                            <i class="fas fa-hotel text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-400">Hotel Website</h3>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Built a sleek and fully responsive website using only HTML, CSS, and vanilla JavaScript.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fab fa-github mr-2"></i>
+                        <a href="#" class="hover:text-green-400 transition duration-300">GitHub Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Certifications</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Certification 1 -->
+                <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-yellow-400 transform transition-all hover:scale-105 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-yellow-500 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-yellow-400">IIRS Certificate</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Completed specialized training in remote sensing and GIS applications from Indian Institute of Remote Sensing.
+                    </p>
+                </div>
+                
+                <!-- Certification 2 -->
+                <div class="bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-orange-400 transform transition-all hover:scale-105 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-orange-500 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-orange-400">MATLAB Onramp Course</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        Completed comprehensive MATLAB training covering fundamentals of programming, data analysis, and visualization.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Experience</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-indigo-500 transform transition-all hover:scale-102 duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-indigo-500 to-purple-600 p-3 rounded-full mr-4">
+                            <i class="fas fa-briefcase text-white"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-400">POWER BI Internship</h3>
+                            <p class="text-gray-400">March 2025 - April 2025</p>
+                        </div>
+                    </div>
+                    <div class="pl-16">
+                        <p class="text-gray-300 mb-2">
+                            Sustainable Supply Chain performance
+                        </p>
+                        <p class="text-gray-300">
+                            Gained hands-on experience with POWER BI for data visualization and business intelligence.
+                            Developed interactive dashboards and reports to analyze supply chain sustainability metrics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+               
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Skills</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Skills -->
+                <div class="skill-box bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-blue-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-500 p-2 rounded mr-3">
+                            <i class="fas fa-code text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-400">Programming</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">HTML</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">CSS</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">JS</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">ReactJS</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">C</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">C++</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">Java</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">Python</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">GitHub</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">SQL (Basics)</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">Mongo DB</span>
+                        <span class="px-3 py-1 bg-blue-900 bg-opacity-50 rounded-full text-blue-300">NLP</span>
+                    </div>
+                </div>
+                
+                <!-- Software Skills -->
+                <div class="skill-box bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-purple-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-purple-500 p-2 rounded mr-3">
+                            <i class="fas fa-desktop text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-400">Software</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Microsoft Excel</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Microsoft PowerPoint</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Microsoft Word</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Microsoft Visual Studio</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Adobe Premiere Pro</span>
+                        <span class="px-3 py-1 bg-purple-900 bg-opacity-50 rounded-full text-purple-300">Adobe Photoshop</span>
+                    </div>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skill-box bg-gray-900 bg-opacity-70 p-6 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm border-l-4 border-green-500">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-green-500 p-2 rounded mr-3">
+                            <i class="fas fa-comments text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-400">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-green-900 bg-opacity-50 rounded-full text-green-300">Marketing Research</span>
+                        <span class="px-3 py-1 bg-green-900 bg-opacity-50 rounded-full text-green-300">Technical Communication</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black bg-opacity-80 backdrop-filter backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center text-gradient">Get In Touch</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Email">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-300 mb-1">Subject</label>
+                            <input type="text" id="subject" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Subject">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                            <textarea id="message" rows="5" class="contact-input w-full px-4 py-3 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-3 px-6 rounded-lg hover:from-blue-600 hover:to-purple-700 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-900 bg-opacity-70 p-8 rounded-lg shadow-lg backdrop-filter backdrop-blur-sm">
+                        <h3 class="text-2xl font-bold text-blue-400 mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-blue-500 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-white">Location</h4>
+                                    <p class="text-gray-400">Thanjavur, Tamil Nadu, India</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-green-500 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-white">Email</h4>
+                                    <p class="text-gray-400">divyanshipati008@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-purple-500 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-white">Phone</h4>
+                                    <p class="text-gray-400">+91-9724818325</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-yellow-500 p-3 rounded-full mr-4">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-medium text-white">Availability</h4>
+                                    <p class="text-gray-400">Monday - Friday: 9AM - 5PM</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h3 class="text-xl font-bold text-blue-400 mb-4">Connect With Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-blue-500 transition duration-300">
+                                    <i class="fab fa-github text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-blue-700 transition duration-300">
+                                    <i class="fab fa-linkedin-in text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-red-500 transition duration-300">
+                                    <i class="fab fa-google text-white"></i>
+                                </a>
+                                <a href="#" class="bg-gray-800 p-3 rounded-full hover:bg-blue-400 transition duration-300">
+                                    <i class="fab fa-twitter text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold text-gradient">Divyanshi Pati</span>
+                </div>
+                <div class="text-gray-400 text-sm">
+                    © 2023 Divyanshi Pati. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add scroll animation
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.project-card, .skill-box, .timeline-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animation
+        document.querySelectorAll('.project-card, .skill-box, .timeline-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
